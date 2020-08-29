@@ -1,0 +1,3 @@
+/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/extensions/extension-fault-injector/runtime/src/main/java/io/quarkus/workshop/superheroes/quack/runtime/QuackConfig.java
+/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/extensions/extension-fault-injector/runtime/src/main/java/io/quarkus/workshop/superheroes/quack/runtime/FaultInjectorRecorder.java
+/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/extensions/extension-fault-injector/runtime/src/main/java/io/quarkus/workshop/superheroes/quack/runtime/FaultInjector.java

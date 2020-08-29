@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    kompose.cmd: /projects/kompose convert --provider=openshift
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: monitoring
+  name: monitoring
+spec:
+  replicas: 1
+  selector:
+    io.kompose.service: monitoring
+  strategy:
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: monitoring
+    spec:
+      containers:
+      - image: ' '
+        name: super-visor
+        ports:
+        - containerPort: 9090
+        resources: {}
+        volumeMounts:
+        - mountPath: /etc/prometheus/prometheus.yml
+          name: monitoring-claim0
+      restartPolicy: Always
+      volumes:
+      - name: monitoring-claim0
+        persistentVolumeClaim:
+          claimName: monitoring-claim0
+  test: false
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - super-visor
+      from:
+        kind: ImageStreamTag
+        name: monitoring:latest
+    type: ImageChange
+status: {}

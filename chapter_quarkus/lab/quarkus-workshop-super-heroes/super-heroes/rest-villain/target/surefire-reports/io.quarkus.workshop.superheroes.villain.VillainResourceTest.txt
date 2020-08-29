@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+Test set: io.quarkus.workshop.superheroes.villain.VillainResourceTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 13, Skipped: 0, Time elapsed: 12.676 s <<< FAILURE! - in io.quarkus.workshop.superheroes.villain.VillainResourceTest
+shouldGetInitialItems  Time elapsed: 0.017 s  <<< ERROR!
+org.junit.jupiter.api.extension.TestInstantiationException: TestInstanceFactory [io.quarkus.test.junit.QuarkusTestExtension] failed to instantiate test class [io.quarkus.workshop.superheroes.villain.VillainResourceTest]: Unable to start Quarkus test resource io.quarkus.workshop.superheroes.villain.DatabaseResource@2af616d3
+Caused by: java.lang.RuntimeException: Unable to start Quarkus test resource io.quarkus.workshop.superheroes.villain.DatabaseResource@2af616d3
+Caused by: org.testcontainers.containers.ContainerLaunchException: Container startup failed
+Caused by: org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageNameFuture=java.util.concurrent.CompletableFuture@5922ae77[Completed normally], imagePullPolicy=DefaultPullPolicy(), dockerClient=LazyDockerClient.INSTANCE)
+Caused by: java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+
+shouldAddAnItem  Time elapsed: 1.753 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldAddAnItem(VillainResourceTest.java:162)
+
+testUpdatingAnItem  Time elapsed: 0 s  <<< ERROR!
+java.lang.NumberFormatException: null
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.testUpdatingAnItem(VillainResourceTest.java:196)
+
+shouldRemoveAnItem  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: parameterValue cannot be null
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldRemoveAnItem(VillainResourceTest.java:229)
+
+shouldGetRandomVillain  Time elapsed: 0.061 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldGetRandomVillain(VillainResourceTest.java:112)
+
+shouldPingSwaggerUI  Time elapsed: 0.027 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldPingSwaggerUI(VillainResourceTest.java:56)
+
+shouldPingMetrics  Time elapsed: 0.032 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldPingMetrics(VillainResourceTest.java:84)
+
+shouldPingReadiness  Time elapsed: 0.025 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldPingReadiness(VillainResourceTest.java:73)
+
+shouldNotAddInvalidItem  Time elapsed: 0.023 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldNotAddInvalidItem(VillainResourceTest.java:132)
+
+shouldPingLiveness  Time elapsed: 0.008 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldPingLiveness(VillainResourceTest.java:65)
+
+shouldNotGetUnknownVillain  Time elapsed: 0.027 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldNotGetUnknownVillain(VillainResourceTest.java:104)
+
+testHelloEndpoint  Time elapsed: 0.008 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.testHelloEndpoint(VillainResourceTest.java:93)
+
+shouldPingOpenAPI  Time elapsed: 0.007 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at io.quarkus.workshop.superheroes.villain.VillainResourceTest.shouldPingOpenAPI(VillainResourceTest.java:48)
+
