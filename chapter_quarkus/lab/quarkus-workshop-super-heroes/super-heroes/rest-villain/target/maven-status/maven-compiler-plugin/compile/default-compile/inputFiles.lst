@@ -1,7 +1,0 @@
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainApplication.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/health/PingVillainResourceHealthCheck.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/Villain.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainResource.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainApplicationLifeCycle.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/VillainService.java
-/projects/do292/chapter_quarkus/lab/quarkus-workshop-super-heroes/super-heroes/rest-villain/src/main/java/io/quarkus/workshop/superheroes/villain/health/DatabaseConnectionHealthCheck.java
