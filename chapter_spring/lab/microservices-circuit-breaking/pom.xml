@@ -35,7 +35,12 @@
     <module>fruit-service</module>
     <module>name-service</module>
   </modules>
-
+<repositories>
+      <repository>
+          <id>redhat</id>
+          <url>https://maven.repository.redhat.com/ga/</url>
+      </repository>
+</repositories>
   <dependencyManagement>
     <dependencies>
       <dependency>

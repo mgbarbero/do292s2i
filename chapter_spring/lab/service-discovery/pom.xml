@@ -12,5 +12,10 @@
         <module>eureka-client</module>
         <module>eureka-service</module>
     </modules>
-
+<repositories>
+      <repository>
+          <id>redhat</id>
+          <url>https://maven.repository.redhat.com/ga/</url>
+      </repository>
+</repositories>
 </project>
