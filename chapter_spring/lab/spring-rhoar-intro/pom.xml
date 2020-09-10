@@ -72,7 +72,6 @@
 
     <!-- Testing -->
    
-   <!-- TODO: ADD PostgreSQL database dependency here -->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -122,6 +121,8 @@
     <profile>
       <id>openshift</id>
       <dependencies>
+          <!-- TODO: ADD PostgreSQL database dependency here -->
+
       </dependencies>
       <build>
         <plugins>
