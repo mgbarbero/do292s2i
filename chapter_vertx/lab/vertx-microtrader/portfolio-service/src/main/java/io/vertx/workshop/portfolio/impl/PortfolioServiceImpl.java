@@ -39,6 +39,8 @@ public class PortfolioServiceImpl implements PortfolioService {
         // The async result instance is created using `Future.succeededFuture`
 
         // TODO: getPortfolio
+        resultHandler.handle(Future.succeededFuture(portfolio));
+
     }
 
     private void sendActionOnTheEventBus(String action, int amount, JsonObject quote, int newAmount) {
@@ -46,6 +48,14 @@ public class PortfolioServiceImpl implements PortfolioService {
         // (use System.currentTimeMillis()), "amount" and "owned" (newAmount)
 
         // TODO: sendActionOnTheEventBus
+
+    vertx.eventBus().publish(EVENT_ADDRESS, new JsonObject()
+    .put("action", action)
+    .put("quote", quote)
+    .put("date", System.currentTimeMillis())
+    .put("amount", amount)
+    .put("owned", newAmount));
+
     }
 
     @Override
@@ -54,6 +64,14 @@ public class PortfolioServiceImpl implements PortfolioService {
         Single<WebClient> quotes = HttpEndpoint.rxGetWebClient(discovery, rec -> rec.getName().equals("quote-generator"));
 
         // TODO: evaluate
+        quotes.subscribe((client, err) -> {
+        if (err != null) {
+       resultHandler.handle(Future.failedFuture(err));
+             } else {
+         computeEvaluation(client, resultHandler);
+            }
+});
+
     }
 
     private void computeEvaluation(WebClient webClient, Handler<AsyncResult<Double>> resultHandler) {
@@ -77,6 +95,13 @@ public class PortfolioServiceImpl implements PortfolioService {
 
     private Single<Double> getValueForCompany(WebClient client, String company, int numberOfShares) {
         // TODO: getValueForCompany
+
+        return client.get("/?name=" + encode(company))
+     .as(BodyCodec.jsonObject())
+     .rxSend()
+     .map(HttpResponse::body)
+     .map(json -> json.getDouble("bid"))
+     .map(val -> val * numberOfShares); 
 
     }
 
