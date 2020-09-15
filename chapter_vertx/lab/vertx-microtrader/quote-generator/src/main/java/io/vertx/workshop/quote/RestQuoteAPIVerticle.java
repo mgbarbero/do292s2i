@@ -25,8 +25,15 @@ public class RestQuoteAPIVerticle extends AbstractVerticle {
         vertx.eventBus().<JsonObject>consumer(GeneratorConfigVerticle.ADDRESS).toFlowable()
 
             // TODO: Extract the body of the message
+            .map(Message::body)
+
 
             // TODO: For each message, populate the quotes map with the received quote.
+            .doOnNext(json -> {
+             quotes.put(json.getString("name"), json); // 2
+            })
+
+
 
             .subscribe();
 
@@ -43,6 +50,20 @@ public class RestQuoteAPIVerticle extends AbstractVerticle {
                 // To encode a Json object, use the `encorePrettily` method
 
                 // TODO: Handle the HTTP request
+
+                String company = request.getParam("name");
+if (company == null) {
+    String content = Json.encodePrettily(quotes);
+    response.end(content);
+} else {
+    JsonObject quote = quotes.get(company);
+    if (quote == null) {
+        response.setStatusCode(404).end();
+    } else {
+        response.end(quote.encodePrettily());
+    }
+}
+
 
             })
         .subscribe();
